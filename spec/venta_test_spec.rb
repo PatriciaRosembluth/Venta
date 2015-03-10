@@ -36,5 +36,12 @@ describe Venta do
 		venta.calcular_total.should == 14
 	end
 
+	it "devuelve el total de una venta con un articulo y un servicio" do
+		venta = Venta.new
+		venta.anadir("articulo", "teclado", 2, 1);
+		venta.anadir("servicio", "mantenimiento", 1, 20);
+		venta.calcular_total.should == 6
+	end
+
 
 end
