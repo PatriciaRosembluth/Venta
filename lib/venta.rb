@@ -14,4 +14,8 @@ class Venta
     return @total;
   end	
 
+  def quitar (producto, cantidad)
+    @total -= producto.cuantoPor(cantidad)
+  end
+
 end
