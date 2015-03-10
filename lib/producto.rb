@@ -8,12 +8,18 @@ class Producto
 	def cuantoPor (cantidad)
 		@total_por_producto = 0
 		if (@tipo_producto == "articulo")
-	 		 @total_por_producto += @precio_producto*cantidad;
+	 		 @total_por_producto += cuantoPorArticulo(cantidad)
 		else
-	  		if (@tipo_producto == "servicio")
-	    		@total_por_producto += @precio_producto*cantidad*0.2;
-	  		end
-		end
+	    	 @total_por_producto += cuantoPorServicio(cantidad)
+	  	end
 		return @total_por_producto
+	end
+
+	def cuantoPorArticulo (cantidad)
+		return @precio_producto*cantidad
+	end
+
+	def cuantoPorServicio (cantidad)
+		return @precio_producto*cantidad*0.2
 	end
 end
